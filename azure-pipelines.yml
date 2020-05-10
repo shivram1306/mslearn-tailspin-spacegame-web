@@ -43,6 +43,7 @@ steps:
     command: 'restore'
     projects: '**/*.csproj'
 
+
 - task: SonarCloudPrepare@1
   displayName: 'Prepare SonarCloud analysis'
   inputs:
@@ -98,6 +99,7 @@ steps:
       eq(variables['Build.Reason'], 'PullRequest'),
       eq(variables['System.PullRequest.TargetBranch'], 'master')
     )
+
 
 - task: SonarCloudPublish@1
   displayName: 'Publish SonarCloud quality gate results'
